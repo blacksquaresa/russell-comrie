@@ -1,10 +1,10 @@
 import React, { ReactNode, Component } from "react";
 
-export class Content extends Component {
+export class Gallery extends Component {
   public render(): ReactNode {
     return (
       <section>
-        <h1>Content Heading</h1>
+        <h1>Gallery</h1>
         <article>
           <p>Some text</p>
           <p>Some more text</p>
