@@ -1,0 +1,46 @@
+.menulist {
+  padding: 5px 0;
+}
+
+.menuitem {
+  text-decoration: none;
+  padding: 0px 10px;
+  border: solid 1px #ccc;
+  border-width: 0 1px 0 1px;
+}
+
+.menuitem:first-child {
+  border-left: 0px;
+}
+
+.menuitem:last-child {
+  border-right: 0px;
+}
+
+@media screen and (max-width: 640px) {
+  nav {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+
+  .menulist {
+    position: absolute;
+    background-color: #cccc;
+    padding: 20px;
+    top: 0px;
+    left: 0px;
+    display: none;
+  }
+
+  .menulist.visible {
+    display: block;
+  }
+
+  .menuitem {
+    border: none;
+    display: block;
+    text-align: left;
+  }
+}
