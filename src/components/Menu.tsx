@@ -24,28 +24,57 @@ export class Menu extends Component<{}, MenuState> {
       <nav>
         <HamburgerButton
           className="hamburger"
-          onToggle={this.handleClick.bind(this)}
+          onChange={this.handleClick.bind(this)}
+          open={this.state.visible}
         />
         <div className={listClass}>
-          <NavLink className="menuitem" to="/">
+          <NavLink
+            className="menuitem"
+            to="/"
+            onClick={this.handleClick.bind(this)}
+          >
             Russell Comrie
           </NavLink>
-          <NavLink className="menuitem" to="/services">
+          <NavLink
+            className="menuitem"
+            to="/services"
+            onClick={this.handleClick.bind(this)}
+          >
             Services
           </NavLink>
-          <NavLink className="menuitem" to="/voiceovers">
+          <NavLink
+            className="menuitem"
+            to="/voiceovers"
+            onClick={this.handleClick.bind(this)}
+          >
             Voice Overs
           </NavLink>
-          <NavLink className="menuitem" to="/shows">
+          <NavLink
+            className="menuitem"
+            to="/shows"
+            onClick={this.handleClick.bind(this)}
+          >
             Shows
           </NavLink>
-          <NavLink className="menuitem" to="/gallery">
+          <NavLink
+            className="menuitem"
+            to="/gallery"
+            onClick={this.handleClick.bind(this)}
+          >
             Gallery
           </NavLink>
-          <NavLink className="menuitem" to="/events">
+          <NavLink
+            className="menuitem"
+            to="/events"
+            onClick={this.handleClick.bind(this)}
+          >
             Events
           </NavLink>
-          <NavLink className="menuitem" to="/contact">
+          <NavLink
+            className="menuitem"
+            to="/contact"
+            onClick={this.handleClick.bind(this)}
+          >
             Contact
           </NavLink>
         </div>

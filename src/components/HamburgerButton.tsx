@@ -4,19 +4,24 @@ import "./HamburgerButton.css";
 
 type HamburgerProps = {
   className?: string;
-  onToggle?: (state: boolean) => void;
+  onChange?: (state: boolean) => void;
+  open?: boolean;
 };
-type HamburgerState = { toggle: boolean };
+type HamburgerState = { open: boolean };
 
 export class HamburgerButton extends Component<HamburgerProps, HamburgerState> {
   readonly state: HamburgerState = {
-    toggle: false
+    open: this.props.open || false
   };
 
+  componentWillReceiveProps(newProps: HamburgerProps) {
+    this.setState({ open: newProps.open || false });
+  }
+
   handleClick() {
-    this.setState({ toggle: !this.state.toggle });
-    if (this.props.onToggle) {
-      this.props.onToggle(this.state.toggle);
+    this.setState({ open: !this.state.open });
+    if (this.props.onChange) {
+      this.props.onChange(this.state.open);
     }
   }
 
@@ -38,8 +43,8 @@ export class HamburgerButton extends Component<HamburgerProps, HamburgerState> {
       >
         <Motion
           style={{
-            x: spring(this.state.toggle ? 1 : 0, presets.wobbly),
-            y: spring(this.state.toggle ? 0 : 1, presets.wobbly)
+            x: spring(this.state.open ? 1 : 0, presets.wobbly),
+            y: spring(this.state.open ? 0 : 1, presets.wobbly)
           }}
         >
           {({ x, y }) => (
