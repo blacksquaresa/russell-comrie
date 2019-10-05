@@ -1,20 +1,40 @@
 .menulist {
-  padding: 5px 0;
+  width: 75%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .menuitem {
   text-decoration: none;
-  padding: 0px 10px;
-  border: solid 1px #ccc;
-  border-width: 0 1px 0 1px;
+  flex-basis: 10%;
+  flex-basis: max-content;
 }
 
-.menuitem:first-child {
-  border-left: 0px;
+.menuitem .menutext {
+  font-family: "Crimson Text", serif;
+  font-size: 21px;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 60px;
+  border-bottom: solid 5px #fff;
+  display: inline-block;
 }
 
-.menuitem:last-child {
-  border-right: 0px;
+.menuitem.active .menutext {
+  border-bottom: solid 5px #d50319;
+}
+
+.icon {
+  height: 35px;
+  padding: 0 20px 0 0;
+  vertical-align: middle;
+}
+
+.mobileicon {
+  display: none;
 }
 
 @media screen and (max-width: 640px) {
@@ -25,28 +45,49 @@
     width: 100%;
   }
 
+  .mobileicon {
+    display: block;
+    position: absolute;
+    top: 11px;
+    left: calc(100% / 6 - 24px);
+  }
+
+  .mobileicon img {
+    height: 43px;
+  }
+
   .menulist {
     position: absolute;
-    background-color: #282c34;
+    background-color: #fff;
     padding: 0px 20px;
-    top: 0px;
-    left: 0px;
+    flex-direction: column;
+    width: calc((100% / 3) - 40px);
+    top: 65px;
+    right: 0px;
     right: 0px;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
+    box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
   }
 
   .menulist.visible {
-    max-height: 250px;
+    max-height: 240px;
   }
 
   .menuitem {
-    border: none;
     display: block;
     text-align: center;
-    color: #fff;
-    border-top: solid 1px #666;
-    padding: 5px 0;
+    border-bottom: 0;
+    width: 100%;
+  }
+
+  .menuitem .menutext,
+  .menuitem.active .menutext {
+    border-bottom: 0;
+  }
+
+  #homelink.menuitem {
+    display: none;
   }
 }

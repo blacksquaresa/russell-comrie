@@ -52,7 +52,7 @@ export class HamburgerButton extends Component<HamburgerProps, HamburgerState> {
               id="navicon"
               fill="none"
               stroke="currentColor"
-              strokeWidth="14"
+              strokeWidth="9"
               strokeLinecap="round"
               strokeLinejoin="round"
             >

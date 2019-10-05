@@ -3,9 +3,10 @@ import "./Menu.css";
 import { NavLink } from "react-router-dom";
 import { HamburgerButton } from "./HamburgerButton";
 
+type MenuProps = { onHome?: boolean };
 type MenuState = { visible: boolean };
 
-export class Menu extends Component<{}, MenuState> {
+export class Menu extends Component<MenuProps, MenuState> {
   readonly state: MenuState = {
     visible: false
   };
@@ -19,65 +20,61 @@ export class Menu extends Component<{}, MenuState> {
     if (this.state.visible) {
       listClass += " visible";
     }
+    let home = this.props.onHome ? (
+      <span className="menutext">Home</span>
+    ) : (
+      <img src="russellcomrieicon.png" className="icon" alt="Russell Comrie" />
+    );
 
     return (
       <nav>
-        <HamburgerButton
-          className="hamburger"
-          onChange={this.handleClick.bind(this)}
-          open={this.state.visible}
-        />
+        <NavLink className="mobileicon" to="/" exact={true}>
+          <img src="russellcomrieicon.png" alt="Russell Comrie" />
+        </NavLink>
         <div className={listClass}>
           <NavLink
             className="menuitem"
             to="/"
+            exact={true}
             onClick={this.handleClick.bind(this)}
+            id="homelink"
           >
-            Russell Comrie
-          </NavLink>
-          <NavLink
-            className="menuitem"
-            to="/services"
-            onClick={this.handleClick.bind(this)}
-          >
-            Services
-          </NavLink>
-          <NavLink
-            className="menuitem"
-            to="/voiceovers"
-            onClick={this.handleClick.bind(this)}
-          >
-            Voice Overs
+            {home}
           </NavLink>
           <NavLink
             className="menuitem"
             to="/shows"
             onClick={this.handleClick.bind(this)}
           >
-            Shows
+            <span className="menutext">Shows</span>
           </NavLink>
           <NavLink
             className="menuitem"
-            to="/gallery"
+            to="/speaking"
             onClick={this.handleClick.bind(this)}
           >
-            Gallery
+            <span className="menutext">Speaking</span>
           </NavLink>
           <NavLink
             className="menuitem"
-            to="/events"
+            to="/about"
             onClick={this.handleClick.bind(this)}
           >
-            Events
+            <span className="menutext">About</span>
           </NavLink>
           <NavLink
             className="menuitem"
             to="/contact"
             onClick={this.handleClick.bind(this)}
           >
-            Contact
+            <span className="menutext">Contact</span>
           </NavLink>
         </div>
+        <HamburgerButton
+          className="hamburger"
+          onChange={this.handleClick.bind(this)}
+          open={this.state.visible}
+        />
       </nav>
     );
   }
