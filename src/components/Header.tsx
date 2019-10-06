@@ -8,10 +8,6 @@ type HeaderProps = {
 
 export class Header extends Component<HeaderProps> {
   public render(): ReactNode {
-    let headerClass = "header";
-    if (this.props.onHome) {
-      headerClass += " home";
-    }
     let logo = this.props.onHome ? (
       <img
         src="russellcomrie.png"
@@ -22,7 +18,7 @@ export class Header extends Component<HeaderProps> {
       ""
     );
     return (
-      <header className={headerClass}>
+      <header className="header">
         {logo}
         <Menu onHome={this.props.onHome || false} />
       </header>

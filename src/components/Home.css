@@ -1,0 +1,25 @@
+.hometext {
+  font-family: "IM Fell English", serif;
+  font-size: 29pt;
+  font-size: 2.4vw;
+}
+
+.homecaps {
+  text-transform: uppercase;
+  font-size: 70%;
+}
+
+.homeitalic {
+  font-style: italic;
+}
+
+.home article {
+  width: 75%;
+  margin: auto;
+}
+
+@media screen and (min-width: 1366px) {
+  .hometext {
+    font-size: 33px;
+  }
+}

@@ -1,0 +1,31 @@
+.footer {
+  background-color: #fff;
+  width: 100%;
+  height: 25px;
+  border-top: solid 1px #8085b2;
+  color: #8085b2;
+  flex-basis: 100%;
+  padding: 5px 0;
+  font-family: "Crimson Text", serif;
+}
+
+.footerdivider {
+  width: 0px;
+  border-left: solid 1px #d5031990;
+  border-right: solid 1px #d5031910;
+  margin: 0 10px;
+}
+
+.footername {
+  white-space: nowrap;
+}
+
+.footer a,
+.footer a:active {
+  color: #8085b2;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@media screen and (max-width: 640px) {
+}
