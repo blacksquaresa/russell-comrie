@@ -9,35 +9,27 @@ export class About extends Component {
           <h1>About</h1>
           <article>
             <p>
-              Pellentesque porttitor, velit lacinia egestas auctor, diam eros
-              tempus arcu, nec vulputate augue magna vel risus. Cras non magna
-              vel ante adipiscing rhoncus. Vivamus a mi. Morbi neque. Aliquam
-              erat volutpat. Integer ultrices lobortis eros. Pellentesque
-              habitant morbi tristique senectus et netus et malesuada fames ac
-              turpis egestas. Proin semper, ante vitae sollicitudin posuere,
-              metus quam iaculis nibh, vitae scelerisque nunc massa eget pede.
-              Sed velit urna, interdum vel, ultricies vel, faucibus at, quam.
-              Donec elit est, consectetuer eget, consequat quis, tempus quis,
-              wisi.
+              Russell Comrie is a man of many and unusual interests. He holds
+              multiple academic degrees in areas as diverse and arcane as
+              medieval literature and modern physics. He has been a professional
+              dance teacher, a lecturer, and a brand strategist. He is also a
+              sought-after voiceover artist and has performed in theatrical
+              productions in both South Africa and the UK.
             </p>
             <p>
-              In in nunc. Class aptent taciti sociosqu ad litora torquent per
-              conubia nostra, per inceptos hymenaeos. Donec ullamcorper
-              fringilla eros. Fusce in sapien eu purus dapibus commodo. Cum
-              sociis natoque penatibus et magnis dis parturient montes, nascetur
-              ridiculus mus. Cras faucibus condimentum odio. Sed ac ligula.
-              Aliquam at eros. Etiam at ligula et tellus ullamcorper ultrices.
-              In fermentum, lorem non cursus porttitor, diam urna accumsan
-              lacus, sed interdum wisi nibh nec nisl.
+              Throughout his magic career he has been drawn to and inspired by
+              the work of the world’s greatest magicians: Lavand, Vernon,
+              Tamariz, Williamson, and others. He has dedicated himself to
+              perfecting the artistic side of magic, creating experiences that
+              resonate long after the show is over.
             </p>
             <p>
-              Ut tincidunt volutpat urna. Mauris eleifend nulla eget mauris. Sed
-              cursus quam id felis. Curabitur posuere quam vel nibh. Cras
-              dapibus dapibus nisl. Vestibulum quis dolor a felis congue
-              vehicula. Maecenas pede purus, tristique ac, tempus eget, egestas
-              quis, mauris. Curabitur non eros. Nullam hendrerit bibendum justo.
-              Fusce iaculis, est quis lacinia pretium, pede metus molestie
-              lacus, at gravida wisi ante at libero.
+              His goal is to draw people into the strange and marvellous world
+              he prefers to inhabit: a world in which magic and reality blur and
+              beauty is revealed behind the mundane.
+            </p>
+            <p>
+              He also enjoys single malt scotch, piano music, and tweed jackets.
             </p>
           </article>
         </section>

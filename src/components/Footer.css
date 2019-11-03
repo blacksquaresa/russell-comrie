@@ -25,6 +25,7 @@
   color: #8085b2;
   text-decoration: none;
   text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 @media screen and (max-width: 640px) {

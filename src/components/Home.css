@@ -13,9 +13,21 @@
   font-style: italic;
 }
 
+.home section {
+  align-self: flex-end;
+}
+
 .home article {
   width: 75%;
   margin: auto;
+}
+
+.home p {
+  text-align: inherit;
+}
+
+.page.home {
+  padding-top: 140px;
 }
 
 @media screen and (min-width: 1366px) {
