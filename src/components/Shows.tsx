@@ -35,7 +35,7 @@ export class Shows extends Component {
               and needs in mind.
             </p>
             <Separator />
-            <h2>Corprate shows</h2>
+            <h2>Corporate shows</h2>
             <p>
               Russell is expert at creating bespoke magical entertainment for
               corporate events and conferences, tailored to drive engagement

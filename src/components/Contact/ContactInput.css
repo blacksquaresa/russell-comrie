@@ -1,0 +1,46 @@
+.input_container {
+  display: block;
+  text-align: left;
+  margin: 20px 0;
+  position: relative;
+}
+
+.input_label {
+  display: block;
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.input_field {
+  border: 2px solid;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+  font-size: 1.5em;
+  font-family: "Crimson Text", serif;
+}
+
+.input_inerror .input_field {
+  border-color: #d50319;
+}
+
+.input_multi {
+  height: 16vh;
+}
+
+.input_error {
+  color: #d50319;
+  font-size: 0.9em;
+  line-height: 0.9em;
+  position: absolute;
+  bottom: -4px;
+  right: 0;
+  background-color: #fff;
+  padding: 0px 4px;
+  display: none;
+}
+
+.input_inerror .input_error {
+  display: block;
+}

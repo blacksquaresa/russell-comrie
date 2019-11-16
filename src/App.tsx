@@ -5,7 +5,7 @@ import { Home } from "./components/Home";
 import { Speaking } from "./components/Speaking";
 import { About } from "./components/About";
 import { Shows } from "./components/Shows";
-import { Contact } from "./components/Contact";
+import { Contact } from "./components/Contact/Contact";
 
 function App() {
   return (
