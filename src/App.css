@@ -4,3 +4,9 @@
   height: 100%;
   font-family: "Crimson Text", serif;
 }
+
+.error {
+  color: #d50319;
+  font-size: 0.9em;
+  font-style: italic;
+}

@@ -1,7 +1,8 @@
-import React, { ReactNode, Component } from "react";
-import { Page } from "./Page";
+import React, { ReactNode } from "react";
+import { Page } from "../layout/Page";
+import { PageComponent } from "./PageComponent";
 
-export class About extends Component {
+export class About extends PageComponent {
   public render(): ReactNode {
     return (
       <Page>

@@ -1,8 +1,10 @@
-import React, { ReactNode, Component } from "react";
-import { Page } from "./Page";
-import { Separator } from "./Separator";
+import React, { ReactNode } from "react";
+import { Page } from "../layout/Page";
+import { Separator } from "../elements/Separator";
+import { PageComponent } from "./PageComponent";
+import { LinkButton } from "../elements/LinkButton";
 
-export class Shows extends Component {
+export class Shows extends PageComponent {
   public render(): ReactNode {
     return (
       <Page>
@@ -25,7 +27,17 @@ export class Shows extends Component {
               Russell conjures stories that will remain with you long after the
               final bow.
             </p>
-            <button>Get Tickets</button>
+            <LinkButton
+              redirector={this.redirector}
+              path="/contact"
+              state={{
+                subject: "Can I book tickets to your show?",
+                context:
+                  "Request comes from the Get Tickets button on the Shows page."
+              }}
+            >
+              Get Tickets
+            </LinkButton>
             <Separator />
             <h2>Bespoke Entertainment</h2>
             <p>
@@ -51,7 +63,17 @@ export class Shows extends Component {
               Get in touch to find out more about how we can help create
               something unforgettable for your next event.
             </p>
-            <button>Book a Show</button>
+            <LinkButton
+              redirector={this.redirector}
+              path="/contact"
+              state={{
+                subject: "Query about booking a corporate show",
+                context:
+                  "Request comes from the Book a Corporate Show button on the Shows page."
+              }}
+            >
+              Book a Show
+            </LinkButton>
             <Separator />
             <h2>Private Functions</h2>
             <p>
@@ -71,7 +93,17 @@ export class Shows extends Component {
               Whether you have fifteen guests or five hundred, Russell will keep
               them enthralled and entranced.
             </p>
-            <button>Book a Show</button>
+            <LinkButton
+              redirector={this.redirector}
+              path="/contact"
+              state={{
+                subject: "Query about booking a private function appearance",
+                context:
+                  "Request comes from the Book a Private Function button on the Shows page."
+              }}
+            >
+              Book a Function
+            </LinkButton>
           </article>
         </section>
       </Page>

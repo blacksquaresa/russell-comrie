@@ -1,8 +1,9 @@
-import React, { ReactNode, Component } from "react";
-import { Page } from "./Page";
+import React, { ReactNode } from "react";
+import { Page } from "../layout/Page";
 import "./Home.css";
+import { PageComponent } from "./PageComponent";
 
-export class Home extends Component {
+export class Home extends PageComponent {
   public render(): ReactNode {
     return (
       <Page onHome={true} className="home">

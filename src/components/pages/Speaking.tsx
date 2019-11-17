@@ -1,8 +1,10 @@
-import React, { ReactNode, Component } from "react";
-import { Page } from "./Page";
-import { Separator } from "./Separator";
+import React, { ReactNode } from "react";
+import { Page } from "../layout/Page";
+import { Separator } from "../elements/Separator";
+import { PageComponent } from "./PageComponent";
+import { LinkButton } from "../elements/LinkButton";
 
-export class Speaking extends Component {
+export class Speaking extends PageComponent {
   public render(): ReactNode {
     return (
       <Page>
@@ -32,7 +34,17 @@ export class Speaking extends Component {
               Russell is available for corporate, public, and private functions.
               Get in touch to find out more.
             </p>
-            <button>Book MC</button>
+            <LinkButton
+              redirector={this.redirector}
+              path="/contact"
+              state={{
+                subject: "Query about a Master of Ceremonies gig",
+                context:
+                  "Request comes from the Book MC button on the Speaking page."
+              }}
+            >
+              Book MC
+            </LinkButton>
             <Separator />
             <h2>Guest Speaker</h2>
             <p>
@@ -45,7 +57,17 @@ export class Speaking extends Component {
               Should your event require something specific, please get in touch
               to discuss a bespoke presentation.
             </p>
-            <button>Book Speaker</button>
+            <LinkButton
+              redirector={this.redirector}
+              path="/contact"
+              state={{
+                subject: "Query about a Guest Speaking gig",
+                context:
+                  "Request comes from the Book Speaker button on the Speaking page."
+              }}
+            >
+              Book Speaker
+            </LinkButton>
           </article>
         </section>
       </Page>

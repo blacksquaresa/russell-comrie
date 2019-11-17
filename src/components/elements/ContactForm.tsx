@@ -1,11 +1,16 @@
 import React, { ReactNode, Component } from "react";
-import { History } from "history";
 import { ContactInput } from "./ContactInput";
 import { ContactSubmit } from "./ContactSubmit";
+import { IRedirectService } from "../../services/RedirectService";
 
-type Props = {
-  history: History;
-};
+interface Props {
+  redirector: IRedirectService;
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+  context?: string;
+}
 
 type State = {
   canSubmit: boolean;
@@ -27,18 +32,18 @@ export class ContactForm extends Component<Props, State> {
   readonly state: State = {
     canSubmit: false,
     processing: false,
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
+    name: this.props.name || "",
+    email: this.props.email || "",
+    subject: this.props.subject || "",
+    message: this.props.message || ""
   };
 
   private hasAllContent(state: State): boolean {
     return !!state.name && !!state.email && !!state.subject && !!state.message;
   }
 
-  private validateName(name: string): boolean {
-    return !!name;
+  private validateContent(content: string): boolean {
+    return !!content;
   }
   private validateEmail(email: string): boolean {
     var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
@@ -74,18 +79,20 @@ export class ContactForm extends Component<Props, State> {
         name: this.state.name,
         email: this.state.email,
         subject: this.state.subject,
-        message: this.state.message
+        message: this.state.message,
+        context: this.props.context
       })
     });
 
     if (response.ok) {
-      this.props.history.push("/thankyou");
+      this.props.redirector.goTo("/thankyou");
     } else {
       try {
         const data: sendmailResponse = await response.json();
-        this.props.history.push(`/error?message=${escape(data.message)}`);
+        this.props.redirector.goTo("/error", { message: data.message });
       } catch (err) {
-        this.props.history.push(`/error`);
+        console.log(err);
+        this.props.redirector.goTo(`/error`);
       }
     }
   }
@@ -98,7 +105,7 @@ export class ContactForm extends Component<Props, State> {
           label="Full Name: "
           value={this.state.name}
           error="Please supply your name"
-          validation={this.validateName.bind(this)}
+          validation={this.validateContent.bind(this)}
           onChange={(err, val) =>
             this.onInputChange.bind(this)("name", val, err)
           }
@@ -117,6 +124,8 @@ export class ContactForm extends Component<Props, State> {
           name="subject"
           label="Subject: "
           value={this.state.subject}
+          error="Please supply a subject"
+          validation={this.validateContent.bind(this)}
           onChange={(err, val) =>
             this.onInputChange.bind(this)("subject", val, err)
           }
@@ -125,6 +134,8 @@ export class ContactForm extends Component<Props, State> {
           name="message"
           label="Message: "
           value={this.state.message}
+          error="Please type a message"
+          validation={this.validateContent.bind(this)}
           multiline={true}
           onChange={(err, val) =>
             this.onInputChange.bind(this)("message", val, err)
