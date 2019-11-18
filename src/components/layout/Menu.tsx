@@ -29,7 +29,7 @@ export class Menu extends Component<MenuProps, MenuState> {
     return (
       <nav>
         <NavLink className="mobileicon" to="/" exact={true}>
-          <img src="russellcomrieicon.png" alt="Russell Comrie" />
+          <img src="monogram.svg" alt="Russell Comrie" />
         </NavLink>
         <div className={listClass}>
           <NavLink

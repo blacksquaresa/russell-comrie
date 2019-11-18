@@ -11,11 +11,21 @@ export class Footer extends Component<FooterProps> {
       <footer className="footer">
         <span className="footername">&copy; Russell Comrie 2019</span>
         <span className="footerdivider"></span>
-        <a className="footerinstagram" href="https://www.instagram.com">
+        <a
+          className="footerinstagram"
+          href="https://www.instagram.com/russell.comrie"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Instagram
         </a>
         <span className="footerdivider"></span>
-        <a className="footertwitter" href="https://www.twitter.com">
+        <a
+          className="footertwitter"
+          href="https://www.twitter.com/russellcomrie"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
           Twitter
         </a>
       </footer>

@@ -4,6 +4,7 @@
   font-family: "IM Fell English", serif;
   font-size: 0.9em;
   padding: 10px;
+  margin: 1em 0;
 }
 
 .marginalia .named {
@@ -17,6 +18,7 @@
     border: 0;
     border-top: solid 1px #d50319;
     padding: 5px 0 0 0;
+    margin: 0;
   }
 
   .marginalia_left {
