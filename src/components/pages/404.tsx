@@ -7,8 +7,8 @@ export class FourOhFour extends PageComponent {
     return (
       <Page>
         <section>
-          <h1>404</h1>
           <article>
+            <h1>404</h1>
             <h2>Page Not Found</h2>
             <p>
               Our sincere apologies; magic we understand, but it seems servers

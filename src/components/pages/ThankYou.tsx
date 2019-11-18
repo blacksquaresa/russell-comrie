@@ -7,8 +7,8 @@ export class ThankYou extends PageComponent {
     return (
       <Page>
         <section>
-          <h1>Thank You</h1>
           <article>
+            <h1>Thank You</h1>
             <p>
               Thank you for getting in touch. We’ll get back to you as soon as
               possible.

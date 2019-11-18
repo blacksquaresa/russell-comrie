@@ -1,5 +1,4 @@
 import React, { ReactNode, Component } from "react";
-import "./ContactSubmit.css";
 import { RedirectService } from "../../services/RedirectService";
 
 interface Props {
@@ -8,7 +7,7 @@ interface Props {
   redirector: RedirectService;
 }
 
-export class LinkButton extends Component<Props> {
+export class RedirectButton extends Component<Props> {
   private onClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void {

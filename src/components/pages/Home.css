@@ -2,6 +2,7 @@
   font-family: "IM Fell English", serif;
   font-size: 29pt;
   font-size: 2.4vw;
+  white-space: nowrap;
 }
 
 .homecaps {
@@ -30,8 +31,35 @@
   padding-top: 140px;
 }
 
+.home_line3 {
+  font-size: 0.94em;
+}
+
+.home_line4 {
+  font-size: 1.02em;
+}
+
+.home_line5 {
+  font-size: 0.97em;
+}
+
+.home_icon {
+  display: none;
+}
+
 @media screen and (min-width: 1366px) {
   .hometext {
     font-size: 33px;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .home_icon {
+    display: block;
+    margin: 0 0 30px 0;
+  }
+
+  .home_icon img {
+    width: 60%;
   }
 }

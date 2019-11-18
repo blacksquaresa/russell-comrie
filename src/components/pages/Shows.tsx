@@ -2,24 +2,38 @@ import React, { ReactNode } from "react";
 import { Page } from "../layout/Page";
 import { Separator } from "../elements/Separator";
 import { PageComponent } from "./PageComponent";
-import { LinkButton } from "../elements/LinkButton";
+import { RedirectButton } from "../elements/RedirectButton";
+import { MarginCue } from "../elements/MarginCue";
+import { Marginalia } from "../elements/Marginalia";
+import { Name } from "../elements/Name";
 
 export class Shows extends PageComponent {
   public render(): ReactNode {
     return (
       <Page>
         <section>
-          <h1>Shows</h1>
           <article>
+            <h1>Shows</h1>
             <h2>
-              <em>Mysteries</em> at the Seabrooke's Theatre
+              <Name>Mysteries</Name> at Seabrooke's Theatre
             </h2>
-            <p>Mysteries will change the way you see magic.</p>
+            <p>
+              <Name>Mysteries</Name> will change the way you see magic.
+            </p>
             <p>
               A one-man show, directed by South African theatre legend Murray
-              McGibbon, Mysteries explores the nature of secrets and how they
-              shape our perception of magic, of art, and of ourselves.
+              McGibbon,{" "}
+              <MarginCue id="mysteries">
+                <Name>Mysteries</Name>
+              </MarginCue>{" "}
+              explores the nature of secrets and how they shape our perception
+              of magic, of art, and of ourselves.
             </p>
+            <Marginalia id="mysteries" align="left">
+              from the Greek <Name>Mysteries</Name> (secret rites or doctrines
+              known only to the initiated); cf. <Name>rúnar</Name> in Old Norse
+              mythological poems
+            </Marginalia>
             <p>
               This elegant, eloquent and enchanting show takes audiences through
               a series of beautiful and mystifying vignettes highlighting
@@ -27,7 +41,7 @@ export class Shows extends PageComponent {
               Russell conjures stories that will remain with you long after the
               final bow.
             </p>
-            <LinkButton
+            <RedirectButton
               redirector={this.redirector}
               path="/contact"
               state={{
@@ -37,7 +51,7 @@ export class Shows extends PageComponent {
               }}
             >
               Get Tickets
-            </LinkButton>
+            </RedirectButton>
             <Separator />
             <h2>Bespoke Entertainment</h2>
             <p>
@@ -46,8 +60,7 @@ export class Shows extends PageComponent {
               event, we can create a bespoke show designed with your audience
               and needs in mind.
             </p>
-            <Separator />
-            <h2>Corporate shows</h2>
+            <h3>Corporate shows</h3>
             <p>
               Russell is expert at creating bespoke magical entertainment for
               corporate events and conferences, tailored to drive engagement
@@ -63,7 +76,7 @@ export class Shows extends PageComponent {
               Get in touch to find out more about how we can help create
               something unforgettable for your next event.
             </p>
-            <LinkButton
+            <RedirectButton
               redirector={this.redirector}
               path="/contact"
               state={{
@@ -73,9 +86,9 @@ export class Shows extends PageComponent {
               }}
             >
               Book a Show
-            </LinkButton>
+            </RedirectButton>
             <Separator />
-            <h2>Private Functions</h2>
+            <h3>Private Functions</h3>
             <p>
               Russell’s brand of intelligent, entertaining magic is ideal for
               weddings, birthdays, engagements, and other important occasions.
@@ -93,7 +106,7 @@ export class Shows extends PageComponent {
               Whether you have fifteen guests or five hundred, Russell will keep
               them enthralled and entranced.
             </p>
-            <LinkButton
+            <RedirectButton
               redirector={this.redirector}
               path="/contact"
               state={{
@@ -103,7 +116,7 @@ export class Shows extends PageComponent {
               }}
             >
               Book a Function
-            </LinkButton>
+            </RedirectButton>
           </article>
         </section>
       </Page>

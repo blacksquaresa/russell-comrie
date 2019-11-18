@@ -9,8 +9,8 @@ export class Oops extends PageComponent<PageProps> {
     return (
       <Page>
         <section>
-          <h1>Oops</h1>
           <article>
+            <h1>Oops</h1>
             <h2>Something Went Wrong</h2>
             <p>
               Our sincere apologies; magic we understand, but it seems servers

@@ -1,0 +1,31 @@
+.marginalia {
+  border: solid 1px #d50319;
+  font-style: italic;
+  font-family: "IM Fell English", serif;
+  font-size: 0.9em;
+  padding: 10px;
+}
+
+.marginalia .named {
+  font-style: normal;
+}
+
+@media screen and (min-width: 641px) {
+  .marginalia {
+    position: absolute;
+    width: 25%;
+    border: 0;
+    border-top: solid 1px #d50319;
+    padding: 5px 0 0 0;
+  }
+
+  .marginalia_left {
+    text-align: right;
+    left: -50%;
+  }
+
+  .marginalia_right {
+    text-align: left;
+    right: -50%;
+  }
+}

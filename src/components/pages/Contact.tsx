@@ -16,8 +16,8 @@ export class Contact extends PageComponent<Props> {
     return (
       <Page>
         <section>
-          <h1>Contact Russell</h1>
           <article>
+            <h1>Contact Russell</h1>
             <p>
               Fill in the form below to get in touch with Russell, and add a
               little magic to your dull, workaday life.

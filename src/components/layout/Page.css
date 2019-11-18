@@ -14,7 +14,7 @@ article {
   height: 100%;
   width: 50%;
   margin: 65px auto;
-  text-align: auto;
+  position: relative;
 }
 
 .centraliser {
@@ -38,6 +38,16 @@ h2 {
   font-family: "Crimson Text", serif;
   text-transform: uppercase;
   letter-spacing: 0.05em;
+  font-size: 1em;
+}
+
+h3 {
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
 }
 
 h2 + p,
@@ -49,6 +59,7 @@ p {
   text-indent: 1em;
   text-align: justify;
   line-height: 1.3em;
+  margin: 0px;
 }
 
 button {
@@ -61,4 +72,21 @@ button {
   font-size: 15px;
   color: #fff;
   border: none;
+  margin: 1em 0 0 0;
+}
+
+@media screen and (max-width: 640px) {
+  article {
+    width: 75%;
+    margin: 0 auto 45px auto;
+  }
+
+  h1 {
+    display: block;
+    font-family: "Crimson Text", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: solid 1px #d50319;
+    margin-top: 45px;
+  }
 }

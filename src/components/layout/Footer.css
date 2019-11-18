@@ -29,4 +29,7 @@
 }
 
 @media screen and (max-width: 640px) {
+  .footer {
+    font-size: 3.2vw;
+  }
 }

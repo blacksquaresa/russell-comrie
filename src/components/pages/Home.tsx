@@ -9,23 +9,28 @@ export class Home extends PageComponent {
       <Page onHome={true} className="home">
         <section>
           <article>
+            <p className="home_icon">
+              <img src="russellcomrie.png" alt="Russell Comrie" />
+            </p>
             <p className="hometext">
-              <span>
+              <span className="home_line1">
                 Witneſs demonſtrations of{" "}
                 <span className="homecaps">wonders</span> ancient &amp; modern,
               </span>
               <br />
-              <span className="homeitalic">
+              <span className="homeitalic home_line2">
                 wherein ſundry objects are cauſed to appear &amp; diſappear,
               </span>
               <br />
-              <span>miraculous tranſpoſitions &amp; penetrations occur,</span>
+              <span className="home_line3">
+                miraculous tranſpoſitions &amp; penetrations occur,
+              </span>
               <br />
-              <span className="homeitalic">
+              <span className="homeitalic home_line4">
                 the ſubtle myſteries of gamblers are expoſed,
               </span>
               <br />
-              <span>
+              <span className="home_line5">
                 &amp; thoughts are <span className="homecaps">magically</span>{" "}
                 divined.
               </span>

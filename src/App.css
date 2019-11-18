@@ -10,3 +10,8 @@
   font-size: 0.9em;
   font-style: italic;
 }
+
+.named {
+  font-style: italic;
+  text-transform: uppercase;
+}

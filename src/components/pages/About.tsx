@@ -7,8 +7,8 @@ export class About extends PageComponent {
     return (
       <Page>
         <section>
-          <h1>About</h1>
           <article>
+            <h1>About</h1>
             <p>
               Russell Comrie is a man of many and unusual interests. He holds
               multiple academic degrees in areas as diverse and arcane as
