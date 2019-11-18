@@ -75,13 +75,16 @@ export class ContactForm extends Component<Props, State> {
 
     const response = await fetch("sendmail.php", {
       method: "POST",
-      body: JSON.stringify({
-        name: this.state.name,
-        email: this.state.email,
-        subject: this.state.subject,
-        message: this.state.message,
-        context: this.props.context
-      })
+      body: (
+        `name=${encodeURIComponent(this.state.name)}&` +
+        `email=${encodeURIComponent(this.state.email)}&` +
+        `subject=${encodeURIComponent(this.state.subject)}&` +
+        `message=${encodeURIComponent(this.state.message)}&` +
+        `context=${encodeURIComponent(this.props.context || "")}`
+      ).replace(/%20/g, "+"),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
     });
 
     if (response.ok) {

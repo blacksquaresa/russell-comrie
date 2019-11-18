@@ -4,10 +4,10 @@ include('Mail.php');
 // include('Mail/mime.php');
 
 try{
-  $input_name     = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING);
-  $input_subject  = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING);
-  $input_context  = filter_input(INPUT_POST, "context", FILTER_SANITIZE_STRING);
-  $input_message  = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING);
+  $input_name     = filter_input(INPUT_POST, "name", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $input_subject  = filter_input(INPUT_POST, "subject", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $input_context  = filter_input(INPUT_POST, "context", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
+  $input_message  = filter_input(INPUT_POST, "message", FILTER_SANITIZE_STRING, FILTER_FLAG_NO_ENCODE_QUOTES);
   $input_replyTo  = filter_input(INPUT_POST, "email", FILTER_VALIDATE_EMAIL);
 
   if(!$input_replyTo){
@@ -22,28 +22,30 @@ try{
 
   $to      = 'gareth@blacksquare.co.za';
   $subject = $input_subject ?: 'Query from Russell Comrie website';
-  $message = $input_message ?: 'No message was provided';  
+  $message = $input_message ? urldecode($input_message) : 'No message was provided';  
+  $context = $input_context ? urldecode($input_context) : '';  
+  $from    = $input_name ? $input_name . '<' . $input_replyTo . '>' : $input_replyTo;
 
-  $headers['From']          = $input_replyTo;
+  $headers['From']          = $from;
   $headers['Reply-To']      = $input_replyTo;
   $headers['Subject']       = $subject;
+  $headers['Content-Type']  = "text/plain; charset=UTF-8";
 
   $params['sendmail_path']  = '/usr/lib/sendmail';
 
-  $text_context = $input_context ? $input_context . $crlf . $crlf : '';
-  $context = $input_context ? '<p>' . $input_context . '</p>' : '';
   $name = $input_name ? $input_name : 'an unknown visitor';
-  $crlf = "\n";
+  $crlf = "\r\n";
   $text = 'Dearest Russell' . $crlf . $crlf .
-          'A message has been received from ' . $name . ' on your Russell Comrie website.' . $crlf . $crlf . 
-          $text_context . 
+          'A message has been received from ' . $name . ' on your Russell Comrie website. ' . $context . $crlf . $crlf . 
           $message . $crlf . $crlf .
           'Thanks,'  . $crlf . 
           'Your website';
+
+  // $html_context = $context ? '<p>' . $context . '</p>' : '';
   // $html = '<html><body>' . 
   //         '<h1>Dearest Russell</h1>' . 
   //         '<p>A message has been received from ' . $name . ' on your <a href="russellcomrie.com">Russell Comrie</a> website.</p>' . 
-  //         $context . 
+  //         $html_context . 
   //         '<pre>' . $message . '</pre>' . 
   //         '<p>Thanks,<br />Your website</p>' . 
   //         '</body></html>';
@@ -58,6 +60,7 @@ try{
 
   // var_dump($headers);
   // var_dump($body);
+  // var_dump($text);
       
   $mailer = Mail::factory('sendmail', $params);
   if (!$mailer->send($to, $headers, $text)) {
