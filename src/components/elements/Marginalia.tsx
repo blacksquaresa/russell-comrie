@@ -9,6 +9,7 @@ interface Props {
   id: string;
   align: "left" | "right";
   cue?: string;
+  layoutUpdate?: number;
 }
 
 export class Marginalia extends Component<Props, State> {
@@ -25,10 +26,8 @@ export class Marginalia extends Component<Props, State> {
     const className = `marginalia marginalia_${this.props.align}`;
     const cue = this.props.cue || "*";
     const id = this.props.id + "_marginalia";
-    const style =
-      this.state.top === undefined
-        ? undefined
-        : ({ top: `${this.state.top}px` } as CSSProperties);
+    const top = this.getPosition();
+    const style = top ? ({ top: `${top}px` } as CSSProperties) : undefined;
     return (
       <div className={className} id={id} style={style}>
         <span className="margin_cue_char">{cue}</span>
@@ -41,10 +40,15 @@ export class Marginalia extends Component<Props, State> {
     this.checkPosition();
   }
 
-  private checkPosition() {
-    const cue = document.getElementById(this.props.id);
-    if (cue && this.state && this.state.top !== cue.offsetTop) {
-      this.setState({ top: cue.offsetTop });
+  private checkPosition(): void {
+    const top = this.getPosition();
+    if (top && top !== this.state.top) {
+      this.setState({ top: top });
     }
+  }
+
+  private getPosition(): number {
+    const cue = document.getElementById(this.props.id);
+    return cue ? cue.offsetTop : 0;
   }
 }

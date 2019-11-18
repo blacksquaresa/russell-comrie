@@ -23,7 +23,7 @@ export class Menu extends Component<MenuProps, MenuState> {
     let home = this.props.onHome ? (
       <span className="menutext">Home</span>
     ) : (
-      <img src="russellcomrieicon.png" className="icon" alt="Russell Comrie" />
+      <img src="monogram.svg" className="icon" alt="Russell Comrie" />
     );
 
     return (

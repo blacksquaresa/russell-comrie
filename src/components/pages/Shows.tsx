@@ -6,6 +6,7 @@ import { RedirectButton } from "../elements/RedirectButton";
 import { MarginCue } from "../elements/MarginCue";
 import { Marginalia } from "../elements/Marginalia";
 import { Name } from "../elements/Name";
+import { BannerImage } from "../elements/BannerImage";
 
 export class Shows extends PageComponent {
   public render(): ReactNode {
@@ -14,6 +15,11 @@ export class Shows extends PageComponent {
         <section>
           <article>
             <h1>Shows</h1>
+            <BannerImage
+              src="/mysteriesbanner2.jpg"
+              alt="Mysteries, a magic show"
+              onLayoutComplete={this.layoutChanged.bind(this)}
+            />
             <h2>
               <Name>Mysteries</Name> at Seabrooke's Theatre
             </h2>
@@ -29,7 +35,11 @@ export class Shows extends PageComponent {
               explores the nature of secrets and how they shape our perception
               of magic, of art, and of ourselves.
             </p>
-            <Marginalia id="mysteries" align="left">
+            <Marginalia
+              id="mysteries"
+              align="left"
+              layoutUpdate={this.state.layoutUpdates}
+            >
               from the Greek <Name>Mysteries</Name> (secret rites or doctrines
               known only to the initiated); cf. <Name>rúnar</Name> in Old Norse
               mythological poems

@@ -10,7 +10,7 @@ export class Home extends PageComponent {
         <section>
           <article>
             <p className="home_icon">
-              <img src="russellcomrie.png" alt="Russell Comrie" />
+              <img src="logo.svg" alt="Russell Comrie" />
             </p>
             <p className="hometext">
               <span className="home_line1">

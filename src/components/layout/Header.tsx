@@ -9,11 +9,7 @@ type HeaderProps = {
 export class Header extends Component<HeaderProps> {
   public render(): ReactNode {
     let logo = this.props.onHome ? (
-      <img
-        src="russellcomrie.png"
-        className="logo"
-        alt="Russell Comrie Magician"
-      />
+      <img src="logo.svg" className="logo" alt="Russell Comrie Magician" />
     ) : (
       ""
     );
