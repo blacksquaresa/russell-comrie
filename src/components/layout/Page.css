@@ -39,6 +39,8 @@ h2 {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 1em;
+  font-weight: normal;
+  margin: 1.1em 0 0.9em 0;
 }
 
 h3 {
@@ -48,10 +50,12 @@ h3 {
   font-size: 1em;
   font-style: italic;
   font-weight: normal;
+  margin: 1.1em 0 0.9em 0;
 }
 
 h2 + p,
-p:first-child {
+h3 + p,
+p:first-of-type {
   text-indent: 0;
 }
 
@@ -73,6 +77,7 @@ button {
   color: #fff;
   border: none;
   margin: 1em 0 0 0;
+  cursor: pointer;
 }
 
 @media screen and (max-width: 640px) {
@@ -88,5 +93,7 @@ button {
     letter-spacing: 0.05em;
     border-bottom: solid 1px #d50319;
     margin-top: 45px;
+    font-weight: normal;
+    font-size: 1.8em;
   }
 }

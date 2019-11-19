@@ -25,6 +25,7 @@
 
 .home p {
   text-align: inherit;
+  text-indent: 0;
 }
 
 .page.home {

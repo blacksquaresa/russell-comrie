@@ -97,7 +97,6 @@ export class Shows extends PageComponent {
             >
               Book a Show
             </RedirectButton>
-            <Separator />
             <h3>Private Functions</h3>
             <p>
               Russell’s brand of intelligent, entertaining magic is ideal for

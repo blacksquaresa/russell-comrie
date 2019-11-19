@@ -44,7 +44,6 @@ export class Speaking extends PageComponent {
             >
               Book MC
             </RedirectButton>
-            <Separator />
             <h3>Guest Speaker</h3>
             <p>
               Russell’s unique background and interests make him a compelling

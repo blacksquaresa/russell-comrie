@@ -23,13 +23,13 @@ nav {
   font-size: 21px;
   text-transform: uppercase;
   color: #000;
-  line-height: 60px;
-  border-bottom: solid 5px #fff;
+  line-height: 58px;
+  border-bottom: solid 7px #fff;
   display: inline-block;
 }
 
 .menuitem.active .menutext {
-  border-bottom: solid 5px #d50319;
+  border-bottom: solid 7px #d50319;
 }
 
 .icon {
@@ -64,16 +64,15 @@ nav {
   .menulist {
     position: absolute;
     background-color: #fff;
-    padding: 0px 20px;
     flex-direction: column;
-    width: calc((100% / 3) - 40px);
+    width: 100%;
     top: 65px;
-    right: 0px;
+    left: 0px;
     right: 0px;
     max-height: 0px;
     overflow: hidden;
     transition: max-height 0.5s ease-in-out;
-    box-shadow: -3px 3px 3px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 0 0px rgba(0, 0, 0, 0.1);
   }
 
   .menulist.visible {
