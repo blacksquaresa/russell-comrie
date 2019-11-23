@@ -80,6 +80,12 @@ button {
   cursor: pointer;
 }
 
+a,
+a:hover,
+a:active {
+  color: #d50319;
+}
+
 @media screen and (max-width: 640px) {
   article {
     width: 75%;

@@ -7,6 +7,7 @@ import { MarginCue } from "../elements/MarginCue";
 import { Marginalia } from "../elements/Marginalia";
 import { Name } from "../elements/Name";
 import { BannerImage } from "../elements/BannerImage";
+import { LinkButton } from "../elements/LinkButton";
 
 export class Shows extends PageComponent {
   public render(): ReactNode {
@@ -30,8 +31,8 @@ export class Shows extends PageComponent {
             </p>
             <p>
               A one-man show, directed by South African theatre legend Murray
-              McGibbon,<Name>Mysteries</Name> explores the nature of secrets and
-              how they shape our perception of magic, of art,{" "}
+              McGibbon, <Name>Mysteries</Name> explores the nature of secrets
+              and how they shape our perception of magic, of art,{" "}
               <MarginCue id="mysteries">and of ourselves.</MarginCue>
             </p>
             <Marginalia
@@ -48,17 +49,9 @@ export class Shows extends PageComponent {
               Russell conjures stories that will remain with you long after the
               final bow.
             </p>
-            <RedirectButton
-              redirector={this.redirector}
-              path="/contact"
-              state={{
-                subject: "Can I book tickets to your show?",
-                context:
-                  "Request comes from the Get Tickets button on the Shows page."
-              }}
-            >
+            <LinkButton url="https://www.quicket.co.za/events/91494-mysteries-a-magic-show/#schedules">
               Get Tickets
-            </RedirectButton>
+            </LinkButton>
             <Separator />
             <h2>Bespoke Entertainment</h2>
             <p>

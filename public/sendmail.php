@@ -20,7 +20,7 @@ try{
     exit(0);
   }
 
-  $to      = 'gareth@blacksquare.co.za';
+  $to      = 'info@russellcomrie.com';
   $subject = $input_subject ?: 'Query from Russell Comrie website';
   $message = $input_message ? urldecode($input_message) : 'No message was provided';  
   $context = $input_context ? urldecode($input_context) : '';  
