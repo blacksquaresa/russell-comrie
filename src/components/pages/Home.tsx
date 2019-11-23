@@ -14,7 +14,7 @@ export class Home extends PageComponent {
             </p>
             <p className="hometext">
               <span className="home_line1">
-                Witneſs demonſtrations of{" "}
+                Witne&#x00DF; demonſtrations of{" "}
                 <span className="homecaps">wonders</span> ancient &amp; modern,
               </span>
               <br />

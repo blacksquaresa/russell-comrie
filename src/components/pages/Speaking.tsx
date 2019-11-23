@@ -3,6 +3,8 @@ import { Page } from "../layout/Page";
 import { Separator } from "../elements/Separator";
 import { PageComponent } from "./PageComponent";
 import { RedirectButton } from "../elements/RedirectButton";
+import { MarginCue } from "../elements/MarginCue";
+import { Marginalia } from "../elements/Marginalia";
 
 export class Speaking extends PageComponent {
   public render(): ReactNode {
@@ -26,9 +28,12 @@ export class Speaking extends PageComponent {
               Russell knows just how to keep your audience engaged without
               stealing focus from your stars, and also has the skills to keep
               them entertained when the unexpected strikes and you have to
-              reboot the computer, recover the missing trophy, or revive a
-              nervous speaker.
+              reboot the computer, recover the missing trophy, or{" "}
+              <MarginCue id="speaker">revive a nervous speaker</MarginCue>.
             </p>
+            <Marginalia id="speaker" align="left">
+              Or find one who’s wandered off at an inopportune moment. RC
+            </Marginalia>
             <p>
               Russell is available for corporate, public, and private functions.
               Get in touch to find out more.
@@ -37,7 +42,7 @@ export class Speaking extends PageComponent {
               redirector={this.redirector}
               path="/contact"
               state={{
-                subject: "Query about a Master of Ceremonies gig",
+                subject: "MC Booking Query",
                 context:
                   "Request comes from the Book MC button on the Speaking page."
               }}
@@ -59,13 +64,14 @@ export class Speaking extends PageComponent {
               redirector={this.redirector}
               path="/contact"
               state={{
-                subject: "Query about a Guest Speaking gig",
+                subject: "Speaker Booking Query",
                 context:
                   "Request comes from the Book Speaker button on the Speaking page."
               }}
             >
               Book Speaker
             </RedirectButton>
+            <Separator />
           </article>
         </section>
       </Page>

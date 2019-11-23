@@ -19,6 +19,8 @@ export class Shows extends PageComponent {
               src="/mysteriesbanner2.jpg"
               alt="Mysteries, a magic show"
               onLayoutComplete={this.layoutChanged.bind(this)}
+              width={1920}
+              height={540}
             />
             <h2>
               <Name>Mysteries</Name> at Seabrooke's Theatre
@@ -28,21 +30,16 @@ export class Shows extends PageComponent {
             </p>
             <p>
               A one-man show, directed by South African theatre legend Murray
-              McGibbon,{" "}
-              <MarginCue id="mysteries">
-                <Name>Mysteries</Name>
-              </MarginCue>{" "}
-              explores the nature of secrets and how they shape our perception
-              of magic, of art, and of ourselves.
+              McGibbon,<Name>Mysteries</Name> explores the nature of secrets and
+              how they shape our perception of magic, of art,{" "}
+              <MarginCue id="mysteries">and of ourselves.</MarginCue>
             </p>
             <Marginalia
               id="mysteries"
               align="left"
               layoutUpdate={this.state.layoutUpdates}
             >
-              from the Greek <Name>Mysteries</Name> (secret rites or doctrines
-              known only to the initiated); cf. <Name>rúnar</Name> in Old Norse
-              mythological poems
+              Magic illuminates those things that are unknowable but true. RC
             </Marginalia>
             <p>
               This elegant, eloquent and enchanting show takes audiences through
@@ -79,9 +76,17 @@ export class Shows extends PageComponent {
             </p>
             <p>
               Show your appreciation for your clients, suppliers, or employees
-              by giving them an experience they will never forget - and
+              by giving them an experience they{" "}
+              <MarginCue id="forget">will never forget</MarginCue> - and
               conveying your corporate culture into the bargain.
             </p>
+            <Marginalia
+              id="forget"
+              align="right"
+              layoutUpdate={this.state.layoutUpdates}
+            >
+              Magic is uniquely powerful in making messages memorable. RC
+            </Marginalia>
             <p>
               Get in touch to find out more about how we can help create
               something unforgettable for your next event.
@@ -90,12 +95,12 @@ export class Shows extends PageComponent {
               redirector={this.redirector}
               path="/contact"
               state={{
-                subject: "Query about booking a corporate show",
+                subject: "Corporate Show Booking Query",
                 context:
                   "Request comes from the Book a Corporate Show button on the Shows page."
               }}
             >
-              Book a Show
+              Book Corporate Show
             </RedirectButton>
             <h3>Private Functions</h3>
             <p>
@@ -119,13 +124,14 @@ export class Shows extends PageComponent {
               redirector={this.redirector}
               path="/contact"
               state={{
-                subject: "Query about booking a private function appearance",
+                subject: "Private Show Booking Query",
                 context:
-                  "Request comes from the Book a Private Function button on the Shows page."
+                  "Request comes from the Book a Private Show button on the Shows page."
               }}
             >
-              Book a Function
+              Book Private Show
             </RedirectButton>
+            <Separator />
           </article>
         </section>
       </Page>

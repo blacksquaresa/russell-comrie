@@ -36,7 +36,7 @@ export class ContactInput extends Component<Props, State> {
     }
 
     if (this.props.onChange) {
-      this.props.onChange(this.state.inError, content);
+      this.props.onChange(newState.inError, content);
     }
 
     this.setState(newState);

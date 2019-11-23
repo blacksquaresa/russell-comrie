@@ -17,10 +17,10 @@ export class Contact extends PageComponent<Props> {
       <Page>
         <section>
           <article>
-            <h1>Contact Russell</h1>
+            <h1>Contact</h1>
             <p>
-              Fill in the form below to get in touch with Russell, and add a
-              little magic to your dull, workaday life.
+              Get in touch by filling in the form below, and let’s talk about
+              adding a little magic to your life.
             </p>
             <ContactForm
               redirector={this.redirector}
