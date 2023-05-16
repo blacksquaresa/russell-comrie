@@ -1,25 +1,22 @@
-import React, { ReactNode, Component } from "react";
-import { RedirectService } from "../../services/RedirectService";
+import React, { PropsWithChildren } from "react";
+import { useNavigate } from "react-router-dom";
 
 interface Props {
   path: string;
   state?: any;
-  redirector: RedirectService;
 }
 
-export class RedirectButton extends Component<Props> {
-  private onClick(
-    event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): void {
-    this.props.redirector.goTo(this.props.path, this.props.state);
+export function RedirectButton(props: PropsWithChildren<Props>) {
+  const navigate = useNavigate();
+
+  const onClick = (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    navigate(props.path, { state: props.state });
     event.preventDefault();
   }
 
-  public render(): ReactNode {
-    return (
-      <button onClick={this.onClick.bind(this)} className="link_button">
-        {this.props.children}
-      </button>
-    );
-  }
+  return (
+    <button onClick={onClick} className="link_button">
+      {props.children}
+    </button>
+  );
 }

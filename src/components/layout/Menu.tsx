@@ -28,14 +28,14 @@ export class Menu extends Component<MenuProps, MenuState> {
 
     return (
       <nav>
-        <NavLink className="mobileicon" to="/" exact={true}>
+        <NavLink className="mobileicon" to="/" end>
           <img src="monogram.svg" alt="Russell Comrie" />
         </NavLink>
         <div className={listClass}>
           <NavLink
             className="menuitem"
             to="/"
-            exact={true}
+            end
             onClick={this.handleClick.bind(this)}
             id="homelink"
           >

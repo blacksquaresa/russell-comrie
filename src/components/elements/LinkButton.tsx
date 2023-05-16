@@ -1,10 +1,10 @@
-import React, { ReactNode, Component } from "react";
+import React, { ReactNode, Component, PropsWithChildren } from "react";
 
 interface Props {
   url: string;
 }
 
-export class LinkButton extends Component<Props> {
+export class LinkButton extends Component<PropsWithChildren<Props>> {
   private onClick(
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void {

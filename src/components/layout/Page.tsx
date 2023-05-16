@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, PropsWithChildren } from "react";
 import "./Page.css";
 import { Header } from "./Header";
 import { Footer } from "./Footer";
@@ -8,7 +8,7 @@ type PageProps = {
   onHome?: boolean;
 };
 
-export class Page extends Component<PageProps> {
+export class Page extends Component<PropsWithChildren<PageProps>> {
   render() {
     let cls = "page";
     if (this.props.className) {

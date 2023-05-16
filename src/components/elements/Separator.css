@@ -1,6 +1,6 @@
 .separator {
   display: block;
-  background: url("/lemniscate.svg") center center no-repeat;
+  background: url("/public/lemniscate.svg") center center no-repeat;
   margin: 30px 0;
   height: 10px;
 }

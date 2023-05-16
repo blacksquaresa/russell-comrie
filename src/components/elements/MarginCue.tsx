@@ -1,4 +1,4 @@
-import React, { ReactNode, Component } from "react";
+import React, { ReactNode, Component, PropsWithChildren } from "react";
 import "./MarginCue.css";
 
 interface Props {
@@ -6,7 +6,7 @@ interface Props {
   cue?: string;
 }
 
-export class MarginCue extends Component<Props> {
+export class MarginCue extends Component<PropsWithChildren<Props>> {
   public render(): ReactNode {
     const cue = this.props.cue || "*";
     return (

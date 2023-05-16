@@ -1,4 +1,4 @@
-import React, { ReactNode, Component, CSSProperties } from "react";
+import React, { ReactNode, Component, CSSProperties, PropsWithChildren } from "react";
 import "./Marginalia.css";
 
 interface State {
@@ -12,7 +12,7 @@ interface Props {
   layoutUpdate?: number;
 }
 
-export class Marginalia extends Component<Props, State> {
+export class Marginalia extends Component<PropsWithChildren<Props>, State> {
   readonly state: State = {};
 
   constructor(props: Props) {
