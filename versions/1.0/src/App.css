@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+  min-width: 320px;
+  height: 100%;
+  font-family: "Crimson Text", serif;
+}
+
+.error {
+  color: #d50319;
+  font-size: 0.9em;
+  font-style: italic;
+}
+
+.named {
+  font-style: italic;
+  text-transform: uppercase;
+}

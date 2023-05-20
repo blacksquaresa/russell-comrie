@@ -1,0 +1,105 @@
+.page {
+  height: 100%;
+  padding-top: 65px;
+  box-sizing: border-box;
+}
+
+section {
+  height: 100%;
+  flex-basis: 100%;
+  align-self: flex-start;
+}
+
+article {
+  height: 100%;
+  width: 50%;
+  margin: 65px auto;
+  position: relative;
+}
+
+.centraliser {
+  margin: 0 auto 0;
+  max-width: calc(1366px * 0.75);
+  min-width: 320px;
+  width: 75%;
+  min-height: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+h1 {
+  display: none;
+}
+
+h2 {
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1em;
+  font-weight: normal;
+  margin: 1.1em 0 0.9em 0;
+}
+
+h3 {
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 1em;
+  font-style: italic;
+  font-weight: normal;
+  margin: 1.1em 0 0.9em 0;
+}
+
+h2 + p,
+h3 + p,
+p:first-of-type {
+  text-indent: 0;
+}
+
+p {
+  text-indent: 1em;
+  text-align: justify;
+  line-height: 1.3em;
+  margin: 0px;
+}
+
+button {
+  background-color: #d50319;
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 15px;
+  color: #fff;
+  border: none;
+  margin: 1em 0 0 0;
+  cursor: pointer;
+}
+
+a,
+a:hover,
+a:active {
+  color: #d50319;
+}
+
+@media screen and (max-width: 640px) {
+  article {
+    width: 75%;
+    margin: 0 auto 45px auto;
+  }
+
+  h1 {
+    display: block;
+    font-family: "Crimson Text", serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: solid 1px #d50319;
+    margin-top: 45px;
+    font-weight: normal;
+    font-size: 1.8em;
+  }
+}
