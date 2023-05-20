@@ -10,43 +10,42 @@ export function About() {
       <section>
         <article>
           <h1>About</h1>
-          <h2>Man &amp; Magician</h2>
+          <h2>About Russell</h2>
           <p>
-            Russell Comrie is a man of many and unusual interests. He holds
-            multiple academic degrees in areas as diverse and arcane as{" "}
-            <MarginCue id="literature">medieval literature</MarginCue> and
-            modern physics. He has been a professional dance teacher, a
-            lecturer, and a brand strategist. He is also a sought-after
-            voiceover artist and has performed in theatrical productions in
-            both South Africa and the UK.
+            Born and raised in KwaZulu-Natal, South Africa, Russell Comrie is an award-winning magician now based in Edmonton, Canada.
           </p>
-          <Marginalia id="literature" align="left">
-            My special interest was the poetic construction of mythology and
-            prophecy in Old Norse literature. RC
+          <p>
+            He is also a man of many and unusual interests. He holds multiple academic degrees in areas as diverse and arcane as medieval 
+            literature and modern physics and is currently completing an additional degree in Arts & Cultural Management. He has been a 
+            professional dance teacher and a university lecturer, and is currently a brand and marketing strategist. He is also a member 
+            of both the Edmonton Magic Club and the South African Magical Society.
+          </p>
+          <p>
+            When not performing magic (or thinking about magic), you can find him browsing local bookshops, walking in the river valley, 
+            or relaxing with a single malt in one hand while the other swoops and dances in time with the {" "}
+            <MarginCue id="music">music in his head</MarginCue>.
+          </p>
+          <Marginalia id="music" align="left">
+            Usually classical, if you're wondering. RC
           </Marginalia>
+          <Separator />
+          <h2>About His Work</h2>
           <p>
-            Throughout his magic career he has been drawn to and inspired by
-            the work of the world’s greatest magicians: Lavand, Vernon,
-            Tamariz, Williamson, and others. He has dedicated himself to
-            perfecting the artistic side of magic, creating experiences that
-            resonate long after the show is over.
+            Throughout his magic career, Russell has been inspired by the work of great magicians, poets, philosophers, and artists. He 
+            has dedicated himself to creating intelligent and artistic magic that resonates long after the show is over.
           </p>
           <p>
-            His goal is to draw people into the strange and marvellous world
-            he prefers to inhabit: a world in which magic and reality blur and
-            beauty is revealed behind the mundane.
+            Every show, every trick, offers a glimpse into a different world: a world in which art leads and {" "}
+            <MarginCue id="follows">reality follows</MarginCue>, in which impossible things happen, and in which the audience and the 
+            magician come together to share something unique.
           </p>
-          <p>
-            He also enjoys single malt scotch,{" "}
-            <MarginCue id="piano">piano music</MarginCue>, and tweed jackets.
-          </p>
-          <Marginalia id="piano" align="right">
-            Especially Murray Perahia’s interpretations of Chopin and
-            Beethoven. RC
+          <Marginalia id="follows" align="right">
+            With thanks to Oscar Wilde. RC
           </Marginalia>
+          <Separator />
           <h2>Magic By Design</h2>
           <p>
-            The design of this website – and Russell’s brand in general –
+            The design of this website - and Russell's brand in general -
             reflects his love of aesthetics reaching back to the medieval
             past.
           </p>
@@ -60,11 +59,11 @@ export function About() {
             in the mid 1940s.
           </p>
           <p>
-            Russell’s <MarginCue id="logo">logo and monogram</MarginCue>{" "}
+            Russell's <MarginCue id="logo">logo and monogram</MarginCue>{" "}
             incorporate an infinity symbol, representing the limitless
             potential of human thought. Its use was inspired by the Magician
             card in the Rider-Waite tarot deck, where it hovers symbolically
-            over the magician’s head.
+            over the magician's head.
           </p>
           <Marginalia id="logo" align="left">
             Designed by the marvellous Mark Stead at{" "}

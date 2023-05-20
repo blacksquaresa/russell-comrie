@@ -43,17 +43,17 @@ export class Menu extends Component<MenuProps, MenuState> {
           </NavLink>
           <NavLink
             className="menuitem"
-            to="/shows"
+            to="/hirerussell"
             onClick={this.handleClick.bind(this)}
           >
-            <span className="menutext">Shows</span>
+            <span className="menutext">Hire Russell</span>
           </NavLink>
           <NavLink
             className="menuitem"
-            to="/speaking"
+            to="/shows"
             onClick={this.handleClick.bind(this)}
           >
-            <span className="menutext">Speaking</span>
+            <span className="menutext">See A Show</span>
           </NavLink>
           <NavLink
             className="menuitem"

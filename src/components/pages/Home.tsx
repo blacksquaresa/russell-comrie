@@ -1,6 +1,7 @@
 import React from "react";
 import { Page } from "../layout/Page";
 import "./Home.css";
+import { RedirectButton } from "../elements/RedirectButton";
 
 export function Home() {
   return (
@@ -32,7 +33,16 @@ export function Home() {
               &amp; thoughts are <span className="homecaps">magically</span>{" "}
               divined.
             </span>
-          </p>
+          </p>          
+          <RedirectButton
+            path="/contact"
+            state={{
+              subject: "Booking Query",
+              context:
+                "Request comes from the Book Now button on the Home page."
+            }}
+          >BOOK NOW</RedirectButton>
+
         </article>
       </section>
     </Page>
