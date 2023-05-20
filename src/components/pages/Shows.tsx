@@ -17,8 +17,8 @@ export function Shows() {
             src="/wondersbanner1.jpg"
             alt="Wonders never cease"
             onLayoutComplete={layoutChanged}
-            width={1920}
-            height={540}
+            width={1200}
+            height={600}
           />
           <h2>
             <Name>Wonders never cease</Name> (Grindstone Theatre, Edmonton)

@@ -9,7 +9,7 @@ export class Footer extends Component<FooterProps> {
   public render(): ReactNode {
     return (
       <footer className="footer">
-        <span className="footername">&copy; Russell Comrie 2019</span>
+        <span className="footername">&copy; Russell Comrie 2023</span>
         <span className="footerdivider"></span>
         <a
           className="footerinstagram"
@@ -18,15 +18,6 @@ export class Footer extends Component<FooterProps> {
           rel="noopener noreferrer"
         >
           Instagram
-        </a>
-        <span className="footerdivider"></span>
-        <a
-          className="footertwitter"
-          href="https://www.twitter.com/russellcomrie"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
         </a>
       </footer>
     );
