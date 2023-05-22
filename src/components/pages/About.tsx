@@ -3,6 +3,7 @@ import { Page } from "../layout/Page";
 import { Separator } from "../elements/Separator";
 import { MarginCue } from "../elements/MarginCue";
 import { Marginalia } from "../elements/Marginalia";
+import { MultiImageContainer, MultiImage } from "../elements/MultiImageContainer";
 
 export function About() {  
   return (
@@ -10,6 +11,12 @@ export function About() {
       <section>
         <article>
           <h1>About</h1>
+          <MultiImageContainer>
+            <MultiImage src="RussellWithGlasses.jpg" alt="Russell with glasses" />
+            <MultiImage src="RussellWithAttitude.jpg" alt="Russell with attitude" />
+            <MultiImage src="RussellWithCards.jpg" alt="Russell with cards" />
+            <MultiImage src="MagicBooks.jpg" alt="Magic books" portion={2} />
+          </MultiImageContainer>
           <h2>About Russell</h2>
           <p>
             Born and raised in KwaZulu-Natal, South Africa, Russell Comrie is an award-winning magician now based in Edmonton, Canada.
