@@ -21,7 +21,9 @@ export function Shows() {
             height={600}
           />
           <h2>
-            <Name>Wonders never cease</Name> (Grindstone Theatre, Edmonton)
+            <Name>Wonders never cease</Name>
+            <br />
+            (Grindstone Theatre, Edmonton)
           </h2>
           <p>
             For one night only, Russell will be performing his solo show <Name>Wonders Never Cease</Name> at Edmonton’s Grindstone Theatre at 7pm on Thursday, June 29.

@@ -4,17 +4,25 @@ import { Separator } from "../elements/Separator";
 import { RedirectButton } from "../elements/RedirectButton";
 import { MarginCue } from "../elements/MarginCue";
 import { Marginalia } from "../elements/Marginalia";
+import { MultiImageContainer, MultiImage } from "../elements/MultiImageContainer";
 
 export function HireRussell() {
   return (
     <Page>
       <section>
         <article>
-          <h1>HireRussell</h1>
+          <h1>Hire Russell</h1>
           <h2>Bespoke Entertainment</h2>
           <p>
             Add a touch of magic to your special event and make it unforgettable!
           </p>
+          <br />
+          <MultiImageContainer>
+            <MultiImage src="RussellBeingCardSharp.jpg" alt="Russell performs amazing sleight of hand" />
+            <MultiImage src="RussellBeingMentalist.jpg" alt="Russell reads your mind" />
+            <MultiImage src="RussellBeingAcademic.jpg" alt="Russell ponders" />
+            <MultiImage src="MagicBooks.jpg" alt="Magic books" portion={2} />
+          </MultiImageContainer>
           <h3>Corporate Entertainment</h3>
           <p>
             The holy grail for any corporate event is to be memorable, fun, and engaging.
@@ -95,7 +103,7 @@ export function HireRussell() {
           <RedirectButton
             path="/contact"
             state={{
-              subject: "Compère / Mc Booking Query",
+              subject: "Compère / MC Booking Query",
               context: "Request comes from the Book Now button for Compère / MC on the Hire Russell page."
             }}
           >
