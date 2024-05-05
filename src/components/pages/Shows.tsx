@@ -14,30 +14,27 @@ export function Shows() {
         <article>
           <h1>Shows</h1>
           <BannerImage
-            src="/wondersbanner1.jpg"
-            alt="Wonders never cease"
+            src="/RC_audreysshow_banner1.jpg"
+            alt="A Book of 52 Pages"
             onLayoutComplete={layoutChanged}
             width={1200}
             height={600}
           />
           <h2>
-            <Name>Wonders never cease</Name>
+            <Name>A Book of 52 Pages</Name>
             <br />
-            (Grindstone Theatre, Edmonton)
+            (Audreys Books, Edmonton)
           </h2>
           <p>
-            For one night only, Russell will be performing his solo show <Name>Wonders Never Cease</Name> at Edmonton’s Grindstone Theatre at 7pm on Thursday, June 29.
+            For one night only, Russell will be performing his solo show <Name>A Book of 52 Pages</Name> at Edmonton's famous Audreys Books at 7pm on Wednesday, May 15.
           </p>
           <p>
-            This intimate and sophisticated show takes audiences on a journey into astonishment and beyond, as Russell presents his award-winning classic and original feats of magic and mind-reading and explores the meaning of wonder in a modern world.
-          </p>
-          <p>
-            Russell will also be available to meet and greet after the show.
+            In this intimate and sophisticated show, Russell presents his award-winning classic and original feats of magic and mind-reading and explores the wonder of words and the stories we tell ourselves and each other.
           </p>
           <p>
             Tickets are limited, so book now to avoid disappointment.
           </p>
-          <LinkButton url="https://www.showpass.com/wondersnevercease-jun29/">
+          <LinkButton url="https://52pages.eventbrite.ca/">
             Get Tickets
           </LinkButton>
           <Separator />
