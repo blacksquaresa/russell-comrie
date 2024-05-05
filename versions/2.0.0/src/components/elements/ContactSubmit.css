@@ -1,0 +1,12 @@
+.contact_button_container {
+  display: block;
+}
+
+.contact_button {
+  font-size: 1.4em;
+  margin: 0;
+}
+
+.contact_button:disabled {
+  background-color: #ccc;
+}
