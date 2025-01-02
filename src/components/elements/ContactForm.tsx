@@ -3,6 +3,8 @@ import { ContactInput } from "./ContactInput";
 import { ContactSubmit } from "./ContactSubmit";
 import { useNavigate } from "react-router-dom";
 
+const sendMessageFunctionUrl = ""
+
 interface Props {
   name?: string;
   email?: string;
@@ -61,7 +63,7 @@ export function ContactForm(props: Props) {
     setState(newState);
   }
 
-  const onSubmit = async(
+  const onSubmit = async (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): Promise<void> => {
     event.preventDefault();
@@ -88,7 +90,7 @@ export function ContactForm(props: Props) {
     } else {
       try {
         const data: sendmailResponse = await response.json();
-        navigate("/error", { state: { message: data.message} });
+        navigate("/error", { state: { message: data.message } });
       } catch (err) {
         console.log(err);
         navigate(`/error`);
@@ -98,51 +100,51 @@ export function ContactForm(props: Props) {
 
   return (
     <form action="sendmail.php" method="Post">
-    <ContactInput
-      name="name"
-      label="Full Name: "
-      value={state.name}
-      error="Please supply your name"
-      validation={validateContent}
-      onChange={(err, val) =>
-        onInputChange("name", val, err)
-      }
-    />
-    <ContactInput
-      name="email"
-      label="Email Address: "
-      value={state.email}
-      error="Please supply a valid email address"
-      validation={validateEmail}
-      onChange={(err, val) =>
-        onInputChange("email", val, err)
-      }
-    />
-    <ContactInput
-      name="subject"
-      label="Subject: "
-      value={state.subject}
-      error="Please supply a subject"
-      validation={validateContent}
-      onChange={(err, val) =>
-        onInputChange("subject", val, err)
-      }
-    />
-    <ContactInput
-      name="message"
-      label="Message: "
-      value={state.message}
-      error="Please type a message"
-      validation={validateContent}
-      multiline={true}
-      onChange={(err, val) =>
-        onInputChange("message", val, err)
-      }
-    />
-    <ContactSubmit
-      onClick={onSubmit}
-      canSubmit={state.canSubmit}
-    ></ContactSubmit>
-  </form>
-);
+      <ContactInput
+        name="name"
+        label="Full Name: "
+        value={state.name}
+        error="Please supply your name"
+        validation={validateContent}
+        onChange={(err, val) =>
+          onInputChange("name", val, err)
+        }
+      />
+      <ContactInput
+        name="email"
+        label="Email Address: "
+        value={state.email}
+        error="Please supply a valid email address"
+        validation={validateEmail}
+        onChange={(err, val) =>
+          onInputChange("email", val, err)
+        }
+      />
+      <ContactInput
+        name="subject"
+        label="Subject: "
+        value={state.subject}
+        error="Please supply a subject"
+        validation={validateContent}
+        onChange={(err, val) =>
+          onInputChange("subject", val, err)
+        }
+      />
+      <ContactInput
+        name="message"
+        label="Message: "
+        value={state.message}
+        error="Please type a message"
+        validation={validateContent}
+        multiline={true}
+        onChange={(err, val) =>
+          onInputChange("message", val, err)
+        }
+      />
+      <ContactSubmit
+        onClick={onSubmit}
+        canSubmit={state.canSubmit}
+      ></ContactSubmit>
+    </form>
+  );
 }

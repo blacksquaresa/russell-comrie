@@ -9,6 +9,8 @@ import { Oops } from "./components/pages/Oops";
 import { ThankYou } from "./components/pages/ThankYou";
 import { Contact } from "./components/pages/Contact";
 import { FourOhFour } from "./components/pages/404";
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 
 function App() {
   return (
@@ -28,5 +30,19 @@ function App() {
     </Router>
   );
 }
+
+const firebaseConfig = {
+  apiKey: "AIzaSyCvEV8IdvMExduVP3Hpd8HE1aVuvGY3j08",
+  authDomain: "russell-comrie.firebaseapp.com",
+  projectId: "russell-comrie",
+  storageBucket: "russell-comrie.firebasestorage.app",
+  messagingSenderId: "844118589212",
+  appId: "1:844118589212:web:c96fda6ac9875ef31d04d9",
+  measurementId: "G-N9XKGJVRBG"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 export default App;
