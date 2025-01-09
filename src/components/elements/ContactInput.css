@@ -22,6 +22,11 @@
   box-sizing: border-box;
 }
 
+.input_field:disabled {
+  border-color: #aaa;
+  color: #aaa;
+}
+
 .input_inerror .input_field {
   border-color: #d50319;
 }

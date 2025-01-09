@@ -1,9 +1,9 @@
 import React from "react";
 import { ContactInput } from "./ContactInput";
 import { ContactSubmit } from "./ContactSubmit";
-import { useNavigate } from "react-router-dom";
+import { NavigateFunction, useNavigate } from "react-router-dom";
 
-const sendMessageFunctionUrl = ""
+const sendMessageFunctionUrl = "/api/sendMessage";// "https://us-central1-russell-comrie.cloudfunctions.net/sendMessage"
 
 interface Props {
   name?: string;
@@ -36,9 +36,43 @@ function hasAllContent(state: State): boolean {
 function validateContent(content: string): boolean {
   return !!content;
 }
+
 function validateEmail(email: string): boolean {
   var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(String(email).toLowerCase());
+}
+
+async function sendMail(state: State, context: string, navigate: NavigateFunction): Promise<void> {
+  try {
+    const response = await fetch(sendMessageFunctionUrl, {
+      method: "POST",
+      body: (
+        `name=${encodeURIComponent(state.name)}&` +
+        `email=${encodeURIComponent(state.email?.trim())}&` +
+        `subject=${encodeURIComponent(state.subject)}&` +
+        `message=${encodeURIComponent(state.message)}&` +
+        `context=${encodeURIComponent(context || "")}`
+      ).replace(/%20/g, "+"),
+      headers: {
+        "Content-Type": "application/x-www-form-urlencoded"
+      }
+    });
+
+    if (response.ok) {
+      navigate("/thankyou");
+    } else {
+      try {
+        const data: sendmailResponse = await response.json();
+        navigate("/error", { state: { message: data.message } });
+      } catch (err) {
+        console.log(err);
+        navigate(`/error`);
+      }
+    }
+  } catch (err) {
+    console.log(err);
+    navigate(`/error`);
+  }
 }
 
 export function ContactForm(props: Props) {
@@ -63,43 +97,25 @@ export function ContactForm(props: Props) {
     setState(newState);
   }
 
-  const onSubmit = async (
+  const onSubmit = (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
-  ): Promise<void> => {
+  ): boolean => {
     event.preventDefault();
     if (!state.canSubmit) {
-      return;
+      return false;
     }
 
-    const response = await fetch("sendmail.php", {
-      method: "POST",
-      body: (
-        `name=${encodeURIComponent(state.name)}&` +
-        `email=${encodeURIComponent(state.email)}&` +
-        `subject=${encodeURIComponent(state.subject)}&` +
-        `message=${encodeURIComponent(state.message)}&` +
-        `context=${encodeURIComponent(props.context || "")}`
-      ).replace(/%20/g, "+"),
-      headers: {
-        "Content-Type": "application/x-www-form-urlencoded"
-      }
-    });
-
-    if (response.ok) {
-      navigate("/thankyou");
-    } else {
-      try {
-        const data: sendmailResponse = await response.json();
-        navigate("/error", { state: { message: data.message } });
-      } catch (err) {
-        console.log(err);
-        navigate(`/error`);
-      }
-    }
+    const newState = {
+      ...state,
+      processing: true
+    } as State;
+    setState(newState);
+    sendMail(newState, props.context || "", navigate);
+    return true;
   }
 
   return (
-    <form action="sendmail.php" method="Post">
+    <form action={sendMessageFunctionUrl} method="Post">
       <ContactInput
         name="name"
         label="Full Name: "
@@ -109,6 +125,7 @@ export function ContactForm(props: Props) {
         onChange={(err, val) =>
           onInputChange("name", val, err)
         }
+        processing={state.processing}
       />
       <ContactInput
         name="email"
@@ -119,6 +136,7 @@ export function ContactForm(props: Props) {
         onChange={(err, val) =>
           onInputChange("email", val, err)
         }
+        processing={state.processing}
       />
       <ContactInput
         name="subject"
@@ -129,6 +147,7 @@ export function ContactForm(props: Props) {
         onChange={(err, val) =>
           onInputChange("subject", val, err)
         }
+        processing={state.processing}
       />
       <ContactInput
         name="message"
@@ -140,10 +159,12 @@ export function ContactForm(props: Props) {
         onChange={(err, val) =>
           onInputChange("message", val, err)
         }
+        processing={state.processing}
       />
       <ContactSubmit
         onClick={onSubmit}
         canSubmit={state.canSubmit}
+        processing={state.processing}
       ></ContactSubmit>
     </form>
   );

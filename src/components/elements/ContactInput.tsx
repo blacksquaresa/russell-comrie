@@ -11,6 +11,7 @@ type Props = {
   validation?: validator;
   multiline?: boolean;
   onChange?: (inError: boolean, val: string) => void;
+  processing: boolean;
 };
 
 type State = {
@@ -32,7 +33,7 @@ export class ContactInput extends Component<Props, State> {
     };
 
     if (this.props.error && this.props.validation) {
-      newState.inError = !this.validate(content, this.props.validation);
+      newState.inError = !this.validate(content?.trim(), this.props.validation);
     }
 
     if (this.props.onChange) {
@@ -66,6 +67,7 @@ export class ContactInput extends Component<Props, State> {
         className="input_field input_multi"
         onChange={onChange}
         value={this.state.value}
+        disabled={this.props.processing}
       />
     ) : (
       <input
@@ -75,6 +77,7 @@ export class ContactInput extends Component<Props, State> {
         className="input_field input_single"
         onChange={onChange}
         value={this.state.value}
+        disabled={this.props.processing}
       />
     );
     return (

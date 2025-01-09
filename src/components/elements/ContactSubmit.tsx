@@ -1,31 +1,43 @@
-import React, { ReactNode, Component } from "react";
+import React from "react";
 import "./ContactSubmit.css";
 
 type Props = {
   onClick: (event: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
   canSubmit: boolean;
+  processing: boolean;
 };
 
-export class ContactSubmit extends Component<Props> {
-  private onClick(
+export function ContactSubmit(props: Props) {
+  console.log('Preparing button with props: ', props);
+  const onClick = function (
     event: React.MouseEvent<HTMLButtonElement, MouseEvent>
   ): void {
-    this.props.onClick(event);
+    props.onClick(event);
   }
 
-  public render(): ReactNode {
-    return (
-      <div id="contact_button_container" className="contact_button_container">
-        <button
-          id="contact_button"
-          name="contact_button"
-          disabled={!this.props.canSubmit}
-          onClick={this.onClick.bind(this)}
-          className="contact_button"
-        >
-          Send
-        </button>
-      </div>
-    );
+  const renderText = function (): string {
+    if (!props.canSubmit) {
+      return "Please fill in all fields";
+    }
+
+    if (props.processing) {
+      return "Sending...";
+    }
+
+    return 'Send';
   }
+
+  return (
+    <div id="contact_button_container" className="contact_button_container">
+      <button
+        id="contact_button"
+        name="contact_button"
+        disabled={!props.canSubmit || props.processing}
+        onClick={onClick}
+        className="contact_button"
+      >
+        {renderText()}
+      </button>
+    </div>
+  );
 }
