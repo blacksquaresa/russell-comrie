@@ -5,3 +5,13 @@
   text-align: center;
   margin: 1em 0;
 }
+
+.contact_form {
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  margin: 20px 0;
+}
+
+.fillout-standard-embed iframe {
+  min-height: auto !important;
+}

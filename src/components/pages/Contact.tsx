@@ -1,6 +1,6 @@
 import React from "react";
 import { Page } from "../layout/Page";
-import { ContactForm } from "../elements/ContactForm";
+import { FilloutContactForm } from "../elements/FilloutContactForm";
 import "./Contact.css";
 import { useLocation } from "react-router-dom";
 
@@ -18,10 +18,10 @@ export function Contact() {
         <article>
           <h1>Contact</h1>
           <p>
-            Get in touch by filling in the form below, and let’s talk about
+            Get in touch by filling in the form below, and let's talk about
             adding a little magic to your life.
           </p>
-          <ContactForm
+          <FilloutContactForm
             name={name}
             email={email}
             subject={subject}
