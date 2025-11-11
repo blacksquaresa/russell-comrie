@@ -8,3 +8,13 @@
   max-width: 100%;
   height: auto;
 }
+
+.banner_video {
+  display: flex;
+  justify-content: center;
+  min-width: max-content;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  margin: 1em 0;
+}

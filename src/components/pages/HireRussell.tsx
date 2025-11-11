@@ -5,6 +5,7 @@ import { RedirectButton } from "../elements/RedirectButton";
 import { MarginCue } from "../elements/MarginCue";
 import { Marginalia } from "../elements/Marginalia";
 import { MultiImageContainer, MultiImage } from "../elements/MultiImageContainer";
+import { ClientLogos } from '../elements/ClientLogos';
 
 export function HireRussell() {
   return (
@@ -46,6 +47,22 @@ export function HireRussell() {
           >
             Book Now
           </RedirectButton>
+          <h4>Here are some of Russell's recent clients</h4>
+          <ClientLogos
+            logos={[
+              { filename: "ACAF.jpg", title: "Alberta Circus Arts Festival" },
+              { filename: "Audreys.png", title: "Audreys Books" },
+              { filename: "CASAMentalHealth.svg", title: "CASA Mental Health" },
+              { filename: "Firefly.png", title: "Firefly Theatre and Circus" },
+              { filename: "Fringe.jpg", title: "Edmonton Fringe Festival" },
+              { filename: "NextfestCoLogo.jpg", title: "Nextfest" },
+              { filename: "Nordic.png", title: "Nordic Mechanical" },
+              { filename: "PYIB.png", title: "Professional Young Insurance Brokers" },
+              { filename: "RiverCree.png", title: "River Cree Casino" },
+              { filename: "Telus WOS.svg.png", title: "Telus World of Science" },
+              { filename: "VarsconaTheatre.png", title: "Varscona Theatre" },
+            ]}
+          />
           <Separator />
           <h3>Wedding Magic</h3>
           <p>

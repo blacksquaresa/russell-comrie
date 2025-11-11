@@ -53,8 +53,18 @@ h3 {
   margin: 1.1em 0 0.9em 0;
 }
 
+h4 {
+  font-family: "Crimson Text", serif;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.9em;
+  font-weight: normal;
+  margin: 1em 0 0.8em 0;
+}
+
 h2 + p,
 h3 + p,
+h4 + p,
 p:first-of-type {
   text-indent: 0;
 }

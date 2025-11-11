@@ -19,17 +19,19 @@ export class BannerVideo extends Component<Props> {
   render() {
     const alt = this.props.alt || "";
     return (
-      <iframe 
-        width={this.props.width} 
-        height={this.props.height}
-        src={this.props.src} 
-        title={alt} 
-        frameBorder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-        referrerPolicy="strict-origin-when-cross-origin"
-        allowFullScreen
-        onLoad={this.handleLoad.bind(this)}>
-      </iframe>
+      <div className="banner_video">
+        <iframe 
+          width={this.props.width} 
+          height={this.props.height}
+          src={this.props.src} 
+          title={alt} 
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+          onLoad={this.handleLoad.bind(this)}>
+        </iframe>
+      </div>
     );
   }
 }

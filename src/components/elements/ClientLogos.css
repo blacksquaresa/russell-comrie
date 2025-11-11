@@ -1,0 +1,56 @@
+.client-logos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+  width: 100%;
+  margin: 1em 0;
+}
+
+.logo-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.logo-square {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.logo-square img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  width: auto;
+  height: auto;
+}
+
+.logo-title {
+  font-size: 0.85em;
+  text-align: center;
+  margin: 0;
+  max-width: 120px;
+  word-wrap: break-word;
+}
+
+@media screen and (max-width: 640px) {
+  .client-logos {
+    gap: 1.5em;
+  }
+
+  .logo-square {
+    width: 80px;
+    height: 80px;
+  }
+
+  .logo-title {
+    font-size: 0.75em;
+    max-width: 80px;
+  }
+}
